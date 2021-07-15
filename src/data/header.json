@@ -1,0 +1,40 @@
+{
+  "globalNav": [
+    {
+      "title": "탐색",
+      "link": "",
+      "category": [],
+      "isBeta": false
+    },
+    {
+      "title": "커리어 성장",
+      "link": "",
+      "isBeta": false
+    },
+    {
+      "title": "직군별 연봉",
+      "link": "",
+      "isBeta": false
+    },
+    {
+      "title": "이력서",
+      "link": "",
+      "isBeta": false
+    },
+    {
+      "title": "매치업",
+      "link": "",
+      "isBeta": false
+    },
+    {
+      "title": "프리랜서",
+      "link": "",
+      "isBeta": false
+    },
+    {
+      "title": "Ai 합격예측",
+      "link": "",
+      "isBeta": true
+    }
+  ]
+}

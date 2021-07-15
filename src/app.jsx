@@ -1,11 +1,14 @@
 import react from 'react';
 
-function App() {
-  return (
-    <div className="App">
+import { GlobalStyle} from "styles/global-style";
+import AppHome from "pages/app_home";
 
-    </div>
+export default function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <AppHome />
+    </>
   );
 }
 
-export default App;
