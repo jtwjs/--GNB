@@ -1,9 +1,8 @@
 {
-  "globalNav": [
+  "GNB": [
     {
       "title": "탐색",
       "link": "",
-      "category": [],
       "isBeta": false
     },
     {
@@ -35,6 +34,271 @@
       "title": "Ai 합격예측",
       "link": "",
       "isBeta": true
+    }
+  ],
+  "LNB": [
+    {
+      "category": {
+        "title": "영업",
+        "link": ""
+      },
+      "subCategory": [
+        {
+          "title": "기업영업",
+          "link": ""
+        },
+        {
+          "title": "외부영업",
+          "link": ""
+        },
+        {
+          "title": "영업 관리자",
+          "link": ""
+        },
+        {
+          "title": "기술영업",
+          "link": ""
+        },
+        {
+          "title": "주요고객사 담당자",
+          "link": ""
+        },
+        {
+          "title": "솔류선 컨설턴트",
+          "link": ""
+        },
+        {
+          "title": "해외영업",
+          "link": ""
+        },
+        {
+          "title": "더보기",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "category": {
+        "title": "미디어",
+        "link": ""
+      },
+      "subCategory": [
+        {
+          "title": "콘텐츠 크리에이터",
+          "link": ""
+        },
+        {
+          "title": "PD",
+          "link": ""
+        },
+        {
+          "title": "영상 편집가",
+          "link": ""
+        },
+        {
+          "title": "에디터",
+          "link": ""
+        },
+        {
+          "title": "비디오 제작",
+          "link": ""
+        },
+        {
+          "title": "작가",
+          "link": ""
+        },
+        {
+          "title": "출판 기획자",
+          "link": ""
+        },
+        {
+          "title": "더보기",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "category": {
+        "title": "인사",
+        "link": ""
+      },
+      "subCategory": [
+        {
+          "title": "인사담당",
+          "link": ""
+        },
+        {
+          "title": "리크루터",
+          "link": ""
+        },
+        {
+          "title": "조직문화",
+          "link": ""
+        },
+        {
+          "title": "평가 보상",
+          "link": ""
+        },
+        {
+          "title": "헤드헌터",
+          "link": ""
+        },
+        {
+          "title": "HRD",
+          "link": ""
+        },
+        {
+          "title": "HRBP",
+          "link": ""
+        },
+        {
+          "title": "더보기",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "category": {
+        "title": "게임 제작",
+        "link": ""
+      },
+      "subCategory": [
+        {
+          "title": "게임 기획자",
+          "link": ""
+        },
+        {
+          "title": "게임 그래픽 디자이너",
+          "link": ""
+        },
+        {
+          "title": "모바일 게임 개발자",
+          "link": ""
+        },
+        {
+          "title": "게임 클라이언트 개발자",
+          "link": ""
+        },
+        {
+          "title": "게임 아티스트",
+          "link": ""
+        },
+        {
+          "title": "유니티 개발자",
+          "link": ""
+        },
+        {
+          "title": "게임 서버 개발자",
+          "link": ""
+        },
+        {
+          "title": "더보기",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "category": {
+        "title": "엔지니어링·설계",
+        "link": ""
+      },
+      "subCategory": [
+        {
+          "title": "전자 엔지니어",
+          "link": ""
+        },
+        {
+          "title": "기계 엔지니어",
+          "link": ""
+        },
+        {
+          "title": "전기 엔지니어",
+          "link": ""
+        },
+        {
+          "title": "전기기계 공학자",
+          "link": ""
+        },
+        {
+          "title": "로봇·자동화",
+          "link": ""
+        },
+        {
+          "title": "QA 엔지니어",
+          "link": ""
+        },
+        {
+          "title": "제품 엔지니어",
+          "link": ""
+        },
+        {
+          "title": "더보기",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "category": {
+        "title": "금융",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "제조·생산",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "물류·무역",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "의료·제약·바이오",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "교육",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "법률·법집행기관",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "식·음료",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "건설·시설",
+        "link": ""
+      },
+      "subCategory": []
+    },
+    {
+      "category": {
+        "title": "공공·복지",
+        "link": ""
+      },
+      "subCategory": []
     }
   ]
 }

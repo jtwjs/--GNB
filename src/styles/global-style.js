@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   
-  .hidden {
+  .a11y {
     overflow: hidden;
     position: absolute;
     border: 0;

@@ -60,7 +60,7 @@ export default function GlobalUtilMenu() {
 				<StyledUtilItem label="내정보관리 버튼">
 					<StyledCircle>
 						<StyledProfile>
-							<span className='hidden'>프로필 사진</span>
+							<span className='a11y'>프로필 사진</span>
 						</StyledProfile>
 					</StyledCircle>
 				</StyledUtilItem>
