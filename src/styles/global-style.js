@@ -41,6 +41,14 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   
+  [href]:focus-visible,
+  [tabindex]:focus-visible,
+  button:focus-visible,
+  select:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0, 0.65);
+  }
+  
   .a11y {
     overflow: hidden;
     position: absolute;
@@ -49,4 +57,5 @@ export const GlobalStyle = createGlobalStyle`
     height: 1px;
     clip: rect(1px, 1px, 1px, 1px);
   }
+  
 `

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components/macro';
 
 import { theme } from "styles/theme";
@@ -8,16 +8,20 @@ const Wrapper = styled.div`
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	padding-top: 5rem;
+	
+  @media screen and ${({theme}) => theme.device.mobile} {
+  padding-top: 5.7rem;
+  }
 `
-
 const StyledMain = styled.main`
 	width: 100%;
 	height: 100%;
+  padding-top: 5rem;
 	background-color: ${({theme}) => theme.colors.whiteColor};
 `
 
 export default function Layout({ children }) {
+
 	return (
 		<ThemeProvider theme={ theme }>
 			<Wrapper>
@@ -28,9 +32,9 @@ export default function Layout({ children }) {
 	);
 };
 
-Layout.Main = ({ children }) => {
+Layout.Main = function LayoutMain({ children })  {
 	return (
-		<StyledMain>
+		<StyledMain id="main">
 			{children}
 		</StyledMain>
 	)

@@ -1,5 +1,17 @@
 const calcRem = size => `${size / 10}rem`;
 
+const breakpoint = {
+	laptop: 1200,
+	tablet: 992,
+	mobile: 767
+}
+
+const device = {
+	laptop: `(max-width: ${breakpoint.laptop}px)`,
+	tablet: `(max-width: ${breakpoint.tablet}px)`,
+	mobile: `(max-width: ${breakpoint.mobile}px)`,
+}
+
 const colors = {
 	blackColor: '#333333',
 	whiteColor: '#ffffff',
@@ -18,6 +30,7 @@ const fontSizes = {
 }
 
 export const theme = {
+	device,
 	colors,
 	fontSizes
 };

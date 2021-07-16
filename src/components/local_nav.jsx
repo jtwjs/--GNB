@@ -1,18 +1,28 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, forwardRef} from 'react';
 import styled from 'styled-components/macro';
 import {cloneDeep} from 'lodash';
 
 import LocalNavItem from "components/local_nav_item";
 import headerData from 'data/header.json';
 
-const Wrapper = styled.div`
-	position: absolute;
+const Wrapper = styled.div.attrs(({show}) => ({
+	height: show ? 'calc(100vh - 5rem)' : 0,
+	opacity: show ? 1 : 0,
+}))`
+	position: fixed;
 	top: 5rem;
 	left: 0;
 	width: 100%;
-	height: calc(100vh - 50px);
+	height: ${({height}) => height};
   background-color: rgba(0,0,0,0.4);
+	opacity: ${({opacity}) => opacity};
+	overflow: hidden;
+	transition: opacity .5s;
   z-index: 10000;
+
+  @media screen and ${({theme}) => theme.device.mobile} {
+    display: none;
+  }
 `;
 const Container = styled.div`
 	width: 100%;
@@ -24,6 +34,10 @@ const CategoryWrap = styled.ul`
 	flex-wrap: wrap;
 	max-width: 106rem;
 	margin: 0 auto;
+
+  @media screen and ${({theme}) => theme.device.laptop} {
+    width: 90%;
+  }
 ` ;
 
 const CATEGORY_MAX_LENGTH = 6;
@@ -36,14 +50,25 @@ const getCategories = (categories, maxNum) => {
 	return result.slice(0, maxNum);
 }
 
-export default function LocalNav(props) {
+const LocalNav = forwardRef(({show, handleMouseLeave}, ref) => {
 
-	const categories = getCategories(cloneDeep(headerData.LNB), CATEGORY_MAX_LENGTH);
-
+	const categories = useMemo(() => getCategories(cloneDeep(headerData.LNB), CATEGORY_MAX_LENGTH), [headerData.LNB]);
+	const handleDimMouseOver = (e) => {
+		if (e.target.dataset?.type === 'dim') {
+			handleMouseLeave();
+		}
+	}
 	return (
-		<Wrapper>
+		<Wrapper
+			id="lnb"
+			aria-hidden={!show}
+			show={show}
+			role="presentation"
+			data-type="dim"
+			onMouseOver={handleDimMouseOver}
+		>
 			<Container>
-				<CategoryWrap>
+				<CategoryWrap ref={ref}>
 					{
 						categories.map((item, idx) => (
 							<LocalNavItem
@@ -57,9 +82,7 @@ export default function LocalNav(props) {
 			</Container>
 		</Wrapper>
 	);
-};
+});
 
-LocalNav.defaultProps = {
-
-};
+export default LocalNav;
 

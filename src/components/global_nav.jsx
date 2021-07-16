@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useCallback, forwardRef} from 'react';
 import styled from 'styled-components/macro';
 
 import GlobalNavItem from 'components/global_nav_item';
 import LocalNav from "components/local_nav";
+import useShowLnb from "hooks/useShowLnb";
 
 import headerData from 'data/header.json';
 
@@ -15,29 +16,46 @@ const MenuList = styled.ul`
 `
 
 
-export default function GlobalNav(props) {
+const GlobalNav = forwardRef(({lnbRef, isShowLnb, handleHideLnb ,handleGnbHover}, ref) => {
+
+
 	return (
 		<Wrapper>
 			<h2 className="a11y">사이트 네비게이션</h2>
-			<MenuList>
+			<MenuList
+				onMouseOver={handleGnbHover}
+				onFocus={handleGnbHover}
+				ref={ref}
+			>
 				{
 					headerData.GNB.map(item => (
-						<GlobalNavItem
-							key={item.title}
-							link={item.link}
-							title={item.title}
-							category={item?.category}
-							isBeta={item.isBeta}
-						/>
+						item.id === 'explore'
+						? <GlobalNavItem
+								key={item.id}
+								id={item.id}
+								link={item.link}
+								title={item.title}
+								isBeta={item.isBeta}
+								aria-controls="lnb"
+								aria-expanded={isShowLnb}
+							/>
+						: <GlobalNavItem
+								key={item.id}
+								id={item.id}
+								link={item.link}
+								title={item.title}
+								isBeta={item.isBeta}
+							/>
 					))
 				}
 			</MenuList>
-			<LocalNav />
+			<LocalNav
+				show={isShowLnb}
+				handleMouseLeave={handleHideLnb}
+				ref={lnbRef}
+			/>
 		</Wrapper>
 	);
-};
+});
 
-GlobalNav.defaultProps = {
-	
-};
-
+export default GlobalNav;

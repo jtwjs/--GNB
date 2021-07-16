@@ -1,9 +1,10 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React, {forwardRef} from 'react';
+import styled, {css} from 'styled-components/macro';
 
 import UtilMenuItem from "components/util_menu_item";
 import {ReactComponent as Search } from "assets/icon/ic_search.svg";
 import {ReactComponent as Alarm } from "assets/icon/ic_alarm.svg";
+import {ReactComponent as Hamburger} from "assets/icon/ic_hamburger.svg";
 import profileImg from 'assets/images/profile.jpg';
 
 
@@ -14,15 +15,32 @@ const Container = styled.ul`
   display: flex;
 `
 const StyledUtilItem = styled(UtilMenuItem)`
+  @media screen and ${({theme}) => theme.device.mobile} {
+	  display: none;
+  }
 `
-const StyledSearch = styled(Search)`
-	width: 1.8rem;
-	height: 1.8rem;
+const HamburgerMenu = styled(UtilMenuItem)`
+	display: none;
+  @media screen and ${({theme}) => theme.device.mobile} {
+    display: block;
+  }
 `
-const StyledAlarm = styled(Alarm)`
+
+const iconMixins = css`
   width: 1.8rem;
   height: 1.8rem;
 `
+
+const StyledSearch = styled(Search)`
+	${iconMixins}
+`
+const StyledAlarm = styled(Alarm)`
+  ${iconMixins}
+`
+const StyledHamburger = styled(Hamburger)`
+  ${iconMixins}
+`
+
 const StyledCircle = styled.div`
 	display: flex;
 	justify-content: center;
@@ -45,19 +63,31 @@ const StyledDashBoardButton = styled(UtilMenuItem)`
 	padding: 0 1rem;
 	font-size: ${({theme}) => theme.fontSizes.small};
 	color: ${({theme}) => theme.colors.greyColorA};
+
+  @media screen and ${({theme}) => theme.device.mobile} {
+    display: none;
+  }
 `
 
-export default function GlobalUtilMenu() {
+ const GlobalUtilMenu = forwardRef(({},ref) =>{
 	return (
 		<Wrapper>
-			<Container>
-				<UtilMenuItem label="검색하기 버튼">
+			<Container ref={ref}>
+				<UtilMenuItem
+					label="검색하기 버튼"
+				>
 					<StyledSearch />
 				</UtilMenuItem>
 				<UtilMenuItem label="알림내역 확인 버튼">
 					<StyledAlarm />
 				</UtilMenuItem>
-				<StyledUtilItem label="내정보관리 버튼">
+				<HamburgerMenu label="메뉴 열기">
+					<StyledHamburger />
+				</HamburgerMenu>
+				<StyledUtilItem
+					label="내정보관리 버튼"
+					hideMobile
+				>
 					<StyledCircle>
 						<StyledProfile>
 							<span className='a11y'>프로필 사진</span>
@@ -70,9 +100,6 @@ export default function GlobalUtilMenu() {
 			</Container>
 		</Wrapper>
 	);
-};
+});
 
-GlobalUtilMenu.defaultProps = {
-	
-};
-
+export default GlobalUtilMenu;

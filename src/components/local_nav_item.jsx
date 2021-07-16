@@ -18,15 +18,20 @@ const CategoryWrap = styled.div`
 `
 
 const Category = styled.a`
+	display: block;
 	padding-bottom: 1.5rem;
 	cursor: pointer;
 `
 const CategoryTitle = styled.h3`
 	position: relative;
+	padding-right: 1rem;
 	font-size: ${({theme}) => theme.fontSizes.large};
 	font-weight: 500;
 	line-height: 1.17;
 	color: ${({theme}) => theme.colors.blackColor};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 	
 	&::before {
 		content: '';
@@ -57,15 +62,18 @@ const SubCategory = styled.li`
 `
 const SubCategoryLink = styled.a`
   position: relative;
-  display: flex;
+  display: block;
 	width: 100%;
+	padding-right: 1rem;
 	font-size: ${({theme}) => theme.fontSizes.small};
 	line-height: 1.1;
-	color: ${({theme}) => theme.colors.greyColorB}};
+  color: ${({theme}) => theme.colors.greyColorB};
+	text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `
 
 export default function LocalNavItem({ category, subCategory }) {
-	console.log('category',category);
 	return (
 		<Wrapper>
 			{
@@ -82,7 +90,7 @@ export default function LocalNavItem({ category, subCategory }) {
 						}
 					</CategoryWrap>
 				:	<>
-					<Category >
+					<Category href={category.link}>
 						<CategoryTitle>
 							{category.title}
 						</CategoryTitle>

@@ -1,36 +1,49 @@
 {
   "GNB": [
     {
+      "id": "home",
+      "title": "홈",
+      "link": "/",
+      "isBeta": false
+    },
+    {
+      "id": "explore",
       "title": "탐색",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "event",
       "title": "커리어 성장",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "salary",
       "title": "직군별 연봉",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "resume",
       "title": "이력서",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "matchup",
       "title": "매치업",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "freelancer",
       "title": "프리랜서",
       "link": "",
       "isBeta": false
     },
     {
+      "id": "aiScore",
       "title": "Ai 합격예측",
       "link": "",
       "isBeta": true

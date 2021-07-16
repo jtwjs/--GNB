@@ -13,12 +13,22 @@ const Wrapper = styled.li`
 		&::before {
 			content: '';
 			position: absolute;
-			left: -20px;
+			left: -2rem;
 			width: 1px;
 			height: 1rem;
 			background-color: ${({theme}) => theme.colors.lightGreyColor};
 		}
 	}
+
+  @media screen and ${({theme}) => theme.device.tablet} {
+    &:last-child {
+      margin-left: 2rem;
+
+      &::before {
+        left: -1rem;
+      }
+    }
+  }
 `
 const StyledButton = styled.button`
 	display: flex;
