@@ -61,7 +61,3 @@ export default function UtilMenuItem({ children, link, ...restProps}) {
 	);
 };
 
-UtilMenuItem.defaultProps = {
-	link: false
-};
-

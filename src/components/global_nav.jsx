@@ -1,9 +1,8 @@
-import React, {useCallback, forwardRef} from 'react';
+import React, {forwardRef} from 'react';
 import styled from 'styled-components/macro';
 
 import GlobalNavItem from 'components/global_nav_item';
 import LocalNav from "components/local_nav";
-import useShowLnb from "hooks/useShowLnb";
 
 import headerData from 'data/header.json';
 

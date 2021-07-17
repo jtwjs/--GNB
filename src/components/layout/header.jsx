@@ -12,7 +12,7 @@ const Wrapper = styled.header`
 	left: 0;
 	width: 100%;
 	height: 5rem;
-	border-bottom: 1px solid ${({theme}) => theme.colors.lightGreyColor};
+	box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
 	background-color: ${({theme}) => theme.colors.whiteColor};
 	z-index: 100;
 
@@ -97,38 +97,37 @@ export default function Header() {
 		const utilFirstFocusableNode = utilFocusableNodeList[0];
 
 		const isGnbFirstFocusableNode = Object.is(eventTarget, gnbFirstFocusableNode);
+		const isGnbSecondFocusableNode = Object.is(eventTarget, gnbSecondFocusableNode);
+		const isGnbLastFocusableNode = Object.is(eventTarget, gnbLastFocusableNode);
 		const isLnbFirstFocusableNode = Object.is(eventTarget, lnbFirstFocusableNode);
 		const isLnbLastFocusableNode = Object.is(eventTarget, lnbLastFocusableNode);
-		const isGnbLastFocusableNode = Object.is(eventTarget, gnbLastFocusableNode);
-		const isGnbSecondFocusableNode = Object.is(eventTarget, gnbSecondFocusableNode);
+		const isUtilFirstFocusableNode = Object.is(eventTarget, utilFirstFocusableNode);
 
 		if (!shiftKey && isGnbFirstFocusableNode) {
 			e.preventDefault();
 			handleShowLnb();
 			lnbFirstFocusableNode.focus();
-
 		}
-
 		if (shiftKey && isLnbFirstFocusableNode) {
-			console.log(gnbFirstFocusableNode);
 			e.preventDefault();
 			gnbFirstFocusableNode.focus();
 		}
-
 		if (!shiftKey && isLnbLastFocusableNode) {
 			e.preventDefault();
 			gnbSecondFocusableNode.focus();
 		}
-
 		if (!shiftKey && isGnbLastFocusableNode) {
 			e.preventDefault();
 			utilFirstFocusableNode.focus();
 		}
-
 		if (shiftKey && isGnbSecondFocusableNode) {
 			e.preventDefault();
 			handleShowLnb();
 			lnbLastFocusableNode.focus();
+		}
+		if (shiftKey && isUtilFirstFocusableNode) {
+			e.preventDefault();
+			gnbLastFocusableNode.focus();
 		}
 
 	},[]);
@@ -143,10 +142,10 @@ export default function Header() {
 			const listener = keyListenerMap.get(e.keyCode);
 			typeof listener === "function" && listener(e);
 		}
-		headerRef.current.addEventListener("keydown", handleKeyListener);
+		headerRef?.current.addEventListener("keydown", handleKeyListener);
 
 		return () => {
-			headerRef.current.removeEventListener("keydown", handleKeyListener);
+			headerRef?.current.removeEventListener("keydown", handleKeyListener);
 		}
 	}, [handleKeyTrap]);
 

@@ -12,7 +12,3 @@ export default function AppHome(props) {
 	);
 };
 
-AppHome.defaultProps = {
-
-};
-
